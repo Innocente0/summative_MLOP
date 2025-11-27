@@ -1,4 +1,4 @@
-# Animal Image Classification ML Pipeline
+# Animals Image Classification ML Pipeline
 
 This project implements an end-to-end Machine Learning pipeline for **multi-class animal image classification**.  
 It includes:

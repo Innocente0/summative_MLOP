@@ -1,27 +1,23 @@
 # Animals Image Classification ML Pipeline
 
-This project implements an end-to-end Machine Learning pipeline for **multi-class animal image classification**.  
+This project implements an end-to-end Machine Learning pipeline for **multi-class animal image classification** using a custom Convolutional Neural Network (CNN).  
 It includes:
 
-- Offline model training in a Jupyter/Colab notebook  
+- Offline model training in a Jupyter notebook  
 - A custom CNN model saved as a pre-trained model  
 - FastAPI backend for prediction and retraining  
 - Streamlit web UI for interaction and visualizations  
 - Locust-based load testing to simulate flood requests to the model API  
 - Docker-ready structure for deployment on a cloud platform
 
----
+## URLs
 
-## 🔗 URLs
+- **Video Demo**: https://youtu.be/feqH8974cfs
+- **Github Link**: https://github.com/Innocente0/summative_MLOP.git 
+- **API base URL (FastAPI)**: `http://127.0.0.1:8000/docs#/`
+- **Web UI (Streamlit)**: `http://localhost:8501/`
 
-> Replace the placeholders below with your actual deployed URLs.
-
-- **API base URL (FastAPI)**: `https://your-api-url.com`
-- **Web UI (Streamlit)**: `https://your-ui-url.com`
-
----
-
-## 📌 Project Description
+## Project Description
 
 The goal of this project is to demonstrate the full Machine Learning lifecycle on **non-tabular data (images)**:
 
@@ -65,12 +61,12 @@ The goal of this project is to demonstrate the full Machine Learning lifecycle o
      - View dataset insights (e.g., class distribution)
 
 6. **Flood Request Simulation**
-   - Locust is used to simulate concurrent users sending requests to the `/predict` endpoint.
+  - Locust is used to simulate concurrent users sending requests to the `/predict` endpoint.
    - Results show how latency and throughput change with different numbers of Docker containers.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 project_name/
@@ -78,28 +74,44 @@ project_name/
 ├── README.md
 │
 ├── notebook/
-│   └── animal_pipeline.ipynb          # Training, evaluation, and saving model
+│   └── animal_pipeline.ipynb          
 │
 ├── src/
-│   ├── preprocessing.py               # Data generators & preprocessing
-│   ├── model.py                       # Model architecture & compilation
-│   └── prediction.py                  # Single-image prediction utilities
+│   ├── preprocessing.py              
+│   ├── model.py                      
+│   └── prediction.py                  
 │
 ├── api/
-│   ├── app.py                         # FastAPI backend (predict, upload, retrain)
+│   ├── app.py                        
 │   ├── requirements.txt
 │   └── Dockerfile
 │
 ├── ui/
-│   └── streamlit_app.py               # Web UI for prediction & retraining
-│
+│   └── streamlit_app.py            
 ├── locust/
-│   └── locustfile.py                  # Flood request simulation config
+│   └── locustfile.py              
 │
 ├── data/
-│   ├── train/                         # Training data (image folders per class)
-│   └── test/                          # Test data (image folders per class)
+│   ├── train/                      
+│   └── test/                       
 │
 └── models/
-    ├── base_animal_cnn.h5             # Custom pre-trained model
-    └── fine_tuned_animal_cnn.h5       # (Optional) model after retraining
+    ├── base_animal_cnn.h5             
+    └── fine_tuned_animal_cnn.h5      
+
+ How To Set It Up
+
+## Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Innocente0/summative_MLOP.git
+
+create and activate a virtual enivornment:
+ - Python -m venv venv
+ - pip install -r requirements.txt
+ - python -m uvicorn api.app:app --host 0.0.0.0 --port 8000 --reload
+ - streamlit run ui/streamlit_app.py
+ - locust -f locust/locustfile.py --host=http://127.0.0.1:8000
+

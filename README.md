@@ -12,7 +12,7 @@ It includes:
 
 ## URLs
 
-- **Video Demo**: https://youtu.be/feqH8974cfs
+- **Video Demo**: https://youtu.be/FKrPX71Ho2g
 - **Github Link**: https://github.com/Innocente0/summative_MLOP.git 
 - **API base URL (FastAPI)**: `http://127.0.0.1:8000/docs#/`
 - **Web UI (Streamlit)**: `http://localhost:8501/`

@@ -64,8 +64,6 @@ The goal of this project is to demonstrate the full Machine Learning lifecycle o
   - Locust is used to simulate concurrent users sending requests to the `/predict` endpoint.
    - Results show how latency and throughput change with different numbers of Docker containers.
 
----
-
 ## Project Structure
 
 ```text
@@ -99,7 +97,7 @@ project_name/
     ├── base_animal_cnn.h5             
     └── fine_tuned_animal_cnn.h5      
 
- How To Set It Up
+How To Set It Up
 
 ## Setup Instructions
 
@@ -114,4 +112,3 @@ create and activate a virtual enivornment:
  - python -m uvicorn api.app:app --host 0.0.0.0 --port 8000 --reload
  - streamlit run ui/streamlit_app.py
  - locust -f locust/locustfile.py --host=http://127.0.0.1:8000
-
